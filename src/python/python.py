@@ -13,6 +13,7 @@ Escolha o level:
 1
 [1] level 1
 [2] level 2
+[3] level 3
 [0] sair
 """)
 
@@ -25,6 +26,11 @@ Escolha o level:
             from level_2 import level_2
             output.clear()
             level_2()
+    elif escolha == "3":
+        if lvl == 2:
+            from level_3 import level_3
+            output.clear()
+            level_3()
         else:
             output.clear()
             print("voce nao tem acesso")
