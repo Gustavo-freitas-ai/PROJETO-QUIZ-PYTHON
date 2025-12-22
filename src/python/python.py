@@ -1,5 +1,7 @@
-from level_1 import level_1, lvl
 import os
+import level_1
+from level_2 import level_2
+
 
 class output:
     @staticmethod
@@ -10,30 +12,23 @@ class output:
 while True:
     escolha = input("""
 Escolha o level:
-1
 [1] level 1
 [2] level 2
-[3] level 3
 [0] sair
 """)
 
-    if escolha == "1":
-        output.clear()
-        level_1()
+    match escolha:
+        case "1":
+            output.clear()
+            level_1.level_1()
 
-    elif escolha == "2":
-        if lvl == 1:
-            from level_2 import level_2
-            output.clear()
-            level_2()
-    elif escolha == "3":
-        if lvl == 2:
-            from level_3 import level_3
-            output.clear()
-            level_3()
-        else:
-            output.clear()
-            print("voce nao tem acesso")
+        case "2":
+            if level_1.lvl == 1:
+                output.clear()
+                level_2()
+            else:
+                output.clear()
+                print("Você ainda não liberou o level 2.")
 
-    elif escolha == "0":
-        break
+        case "0":
+            break
