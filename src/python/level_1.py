@@ -1,5 +1,4 @@
 import os
-import time
 from level_2 import level_2
 
 class output:
@@ -46,7 +45,7 @@ def level_1():
         print(f"Voce acertou {cont}")
 
         if cont == 3:
-            lvl += 1
+            lvl = 1
             output.clear()
             escolha = input("""
 Parabens, voce tirou a nota maxima!

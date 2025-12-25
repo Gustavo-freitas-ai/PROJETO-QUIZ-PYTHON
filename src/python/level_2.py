@@ -1,4 +1,6 @@
 import os
+import level_1
+from level_3 import level_3
 
 class output:
     @staticmethod
@@ -12,6 +14,8 @@ def level_2():
     pergunta1 = "1 x 1 = "
     pergunta2 = "2 x 4 = "
     pergunta3 = "3 x 6 = "
+
+    output.clear()
 
     while True:
         print(pergunta1)
@@ -38,10 +42,25 @@ def level_2():
         print(f"Voce acertou {cont}")
 
         if cont == 3:
+            level_1.lvl = 2
             output.clear()
-            print("Parabens, voce finalizou o level 2!")
+            escolha = input("""
+Parabens, voce tirou a nota maxima!
+Deseja continuar para o level 3?
+
+[1] sim
+[2] nao
+""")
+            if escolha == "1":
+                level_3()
             break
-        else:
-            cont = 0
+
+        elif cont == 2:
             output.clear()
-            print("Tente novamente")
+            print("Parabens, voce tirou uma nota media")
+            cont = 0
+
+        else:
+            output.clear()
+            print("Na proxima voce se sai melhor")
+            cont = 0
